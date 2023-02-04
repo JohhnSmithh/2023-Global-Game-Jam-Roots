@@ -7,6 +7,13 @@ public class PlayerController : MonoBehaviour
     // constants
     private const float WALK_SPEED = 5.0f;
     private const float INIT_JUMP_SPEED = 5.0f;
+    private const float INIT_ROLL_SPEED = 3.0f;
+    private const float MAX_ROLL_SPEED = 10.0f;
+    private const float ROLL_FORCE = 1000.0f;
+
+    // variables
+    private enum RollingState { LEFT, RIGHT, NONE };
+    private RollingState rolling;
 
     // Unity variables
     Rigidbody2D rb;
@@ -20,24 +27,66 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
+
+        rolling = RollingState.NONE;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Walking
-        if(Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        if(rolling != RollingState.NONE)
         {
-            rb.velocity = new Vector2(WALK_SPEED, rb.velocity.y);
+            // apply roll force if rolling
+            rb.AddForce(new Vector2((rolling==RollingState.LEFT?-1:1)*ROLL_FORCE*Time.deltaTime, 0), ForceMode2D.Force);
+
+            // cap rolling speed
+            if(rb.velocity.x > MAX_ROLL_SPEED)
+            {
+                rb.velocity = new Vector2(MAX_ROLL_SPEED, rb.velocity.y);
+            }
+            else if(rb.velocity.x < -MAX_ROLL_SPEED)
+            {
+                rb.velocity = new Vector2(-MAX_ROLL_SPEED, rb.velocity.y);
+            }
+
+            // end rolling if not only holding proper direction
+            if((rolling == RollingState.LEFT && (Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A))) || (rolling == RollingState.RIGHT && (Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D))) )
+            {
+                rolling = RollingState.NONE;
+            }
         }
-        else if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        else // not rolling
         {
-            rb.velocity = new Vector2(-WALK_SPEED, rb.velocity.y);
+            // Walking
+            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            {
+                rb.velocity = new Vector2(WALK_SPEED, rb.velocity.y);
+
+                // enter right roll
+                if(Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded())
+                {
+                    rb.velocity = new Vector2(INIT_ROLL_SPEED, rb.velocity.y);
+                    rolling = RollingState.RIGHT;
+                }
+            }
+            else if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                rb.velocity = new Vector2(-WALK_SPEED, rb.velocity.y);
+
+                // enter left roll
+                if (Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded())
+                {
+                    rb.velocity = new Vector2(-INIT_ROLL_SPEED, rb.velocity.y);
+                    rolling = RollingState.LEFT;
+                }
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
-        else
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        }
+
+        
 
         // Jumping
         if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
