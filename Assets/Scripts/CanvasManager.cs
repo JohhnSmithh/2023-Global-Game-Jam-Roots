@@ -39,7 +39,7 @@ public class CanvasManager : MonoBehaviour
     void Update()
     {
         // display current time in seconds rounded to two decimal places
-        timeText.SetText("Time: " + Mathf.Round(100 * GameManager.instance.getGameTime()) / 100);
+        timeText.SetText("Time: " + Mathf.Round(100 * GameManager.instance.GetGameTime()) / 100);
 
         // set notepad positions to track to
         xTrack = NOTE_POSITIONS[(int) noteState, 0];

@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     [System.Serializable]
     private class SaveData
     {
-
+        public string sceneName;
+        public Vector2 spawnPoint;
     }
     private SaveData data;
 
@@ -29,18 +30,10 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this);
 
             data = new SaveData();
-            string path = Application.persistentDataPath + "/savedata.json";
-            if (File.Exists(path))
-            {
-                // read json file into data object
-                string json = File.ReadAllText(path);
-                data = JsonUtility.FromJson<SaveData>(json);
-            }
-            else // default save file configuration
-            {
-                // initialize save data to default values (used when no save data file is found)
-                
-            }
+
+            // initialize save data to default values (used when no save data file is found)
+            data.sceneName = "Hub";
+            data.spawnPoint = new Vector2(0, 0);
         }
         else
         {
@@ -60,21 +53,34 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void OnApplicationQuit()
-    {
-        // save SaveData to json file
-        string json = JsonUtility.ToJson(data);
-        File.WriteAllText(Application.persistentDataPath + "/savedata.json", json);
-    }
-
     #endregion
 
     #region DATA FUNCTIONS
 
+    public string GetSceneName()
+    {
+        return data.sceneName;
+    }
+
+    public Vector2 GetSpawnPoint()
+    {
+        return data.spawnPoint;
+    }
+
     // get time in game (used to determine time of setting)
-    public float getGameTime()
+    public float GetGameTime()
     {
         return Time.time;
+    }
+
+    public void setSceneName(string sceneName)
+    {
+        data.sceneName = sceneName;
+    }
+
+    public void setSpawnPoint(Vector2 spawnPoint)
+    {
+        data.spawnPoint = spawnPoint;
     }
 
     #endregion
@@ -103,6 +109,14 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void TransitionScene(TransitionData transitionData)
+    {
+        data.sceneName = transitionData.sceneName;
+        data.spawnPoint = transitionData.spawnPoint;
+
+        LoadScene(data.sceneName);
     }
 
     #endregion
