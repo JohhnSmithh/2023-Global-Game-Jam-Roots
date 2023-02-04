@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         public string sceneName;
         public Vector2 spawnPoint;
         public string notebookData;
+        public int[] enteredCode;
     }
     private SaveData data;
 
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
             data.sceneName = "Hub";
             data.spawnPoint = new Vector2(0, 0);
             data.notebookData = "Notes:\n";
+            data.enteredCode = new int[4] { 0, 0, 0, 0 };
         }
         else
         {
@@ -74,25 +76,35 @@ public class GameManager : MonoBehaviour
         return data.notebookData;
     }
 
+    public int[] GetEnteredCode()
+    {
+        return data.enteredCode;
+    }
+
     // get time in game (used to determine time of setting)
     public float GetGameTime()
     {
         return Time.time;
     }
 
-    public void setSceneName(string sceneName)
+    public void SetSceneName(string sceneName)
     {
         data.sceneName = sceneName;
     }
 
-    public void setSpawnPoint(Vector2 spawnPoint)
+    public void SetSpawnPoint(Vector2 spawnPoint)
     {
         data.spawnPoint = spawnPoint;
     }
 
-    public void setNotebookText(string notebookText)
+    public void SetNotebookText(string notebookText)
     {
         data.notebookData = notebookText;
+    }
+
+    public void SetEnteredCode(int[] newCode)
+    {
+        data.enteredCode = newCode;
     }
 
     #endregion

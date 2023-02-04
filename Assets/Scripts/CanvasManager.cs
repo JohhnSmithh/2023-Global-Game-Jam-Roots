@@ -67,7 +67,7 @@ public class CanvasManager : MonoBehaviour
         speakerText.SetText(speakerName);
         dialogueText.SetText(dialogue);
         // add dialogue to notebook
-        GameManager.instance.setNotebookText(GameManager.instance.GetNotebookText() + "- " + dialogue + "\n");
+        GameManager.instance.SetNotebookText(GameManager.instance.GetNotebookText() + "- " + dialogue + "\n");
         noteText.SetText(GameManager.instance.GetNotebookText());
 
         // activate all text/image obejcts for dialogue

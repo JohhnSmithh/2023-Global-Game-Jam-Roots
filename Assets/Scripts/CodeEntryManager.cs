@@ -26,7 +26,7 @@ public class CodeEntryManager : MonoBehaviour
         selectedIndex = 0;
 
         // default digit initialization
-        digits = new int[4] {0, 0, 0, 0} ;
+        digits = GameManager.instance.GetEnteredCode();
     }
 
     // Update is called once per frame
@@ -73,7 +73,17 @@ public class CodeEntryManager : MonoBehaviour
         // return to hub with escape key
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            // update current entered code in GameManager
+            GameManager.instance.SetEnteredCode(digits);
+
+            // return to hub
             GameManager.instance.LoadScene("Hub");
+        }
+        else if(Input.GetKeyDown(KeyCode.Return))
+        {
+            GameManager.instance.SetEnteredCode(digits);
+
+            // check for correct code and then show either victory or apply punishment
         }
     }
 }
