@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
         // assign player position based on spawn point
         transform.position = GameManager.instance.GetSpawnPoint();
+        rb.sleepMode = RigidbodySleepMode2D.NeverSleep;
 
         rolling = RollingState.NONE;
         bounceTimer = 0;
