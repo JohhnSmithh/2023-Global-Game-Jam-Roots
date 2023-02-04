@@ -13,12 +13,15 @@ public class PlayerController : MonoBehaviour
     private const float BOUNCE_SPEED_X = 5.0f;
     private const float BOUNCE_SPEED_Y = 8.5f;
     private const float BOUNCE_TIME = 0.6f;
+    private const float INTERACT_WINDOW = 0.1f;
 
     // variables
     private enum RollingState { LEFT, RIGHT, NONE, BOUNCING };
     private RollingState rolling;
     private float bounceTimer;
     private float localMaxSpeed;
+    private bool isAttemptingInteract;
+    private float interactTimer;
 
     // Unity variables
     Rigidbody2D rb;
@@ -36,6 +39,8 @@ public class PlayerController : MonoBehaviour
         rolling = RollingState.NONE;
         bounceTimer = 0;
         localMaxSpeed = INIT_ROLL_SPEED;
+        isAttemptingInteract = false;
+        interactTimer = 0;
     }
 
     // Update is called once per frame
@@ -129,7 +134,35 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, INIT_JUMP_SPEED);
         }
+
+        // interacting input
+        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            isAttemptingInteract = true;
+            interactTimer = 0;
+        }
+        // timer system necessary because a straight input check in OnTriggerStay updates once per physics update and therefore could miss an input
+        if(isAttemptingInteract)
+        {
+            if (interactTimer > INTERACT_WINDOW)
+                isAttemptingInteract = false;
+
+            interactTimer += Time.deltaTime;
+        }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("CodeNPC") && isAttemptingInteract && !collision.gameObject.GetComponent<CodeNPCData>().hasSpoken)
+        {
+            // only permits one interaction
+            collision.gameObject.GetComponent<CodeNPCData>().hasSpoken = true;
+
+            // display message here (requires Canvas)
+        }
+    }
+
+    #region COLLISIONS
 
     private bool IsGrounded()
     {
@@ -150,6 +183,7 @@ public class PlayerController : MonoBehaviour
         return ray.collider != null;
     }
 
+    // returns if right side of player is touching wall
     private bool IsTouchingRightWall()
     {
         // send box cast below player
@@ -172,6 +206,7 @@ public class PlayerController : MonoBehaviour
         return ray.collider != null;
     }
 
+    // returns if left side of player is touching wall
     private bool IsTouchingLeftWall()
     {
         // send box cast below player
@@ -192,4 +227,6 @@ public class PlayerController : MonoBehaviour
         // return if boxcast hit a platform
         return ray.collider != null;
     }
+
+    #endregion
 }
