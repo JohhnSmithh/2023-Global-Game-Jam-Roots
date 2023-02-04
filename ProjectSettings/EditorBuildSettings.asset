@@ -56,4 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/Room13.unity
     guid: 636ab088afca8ce47a625723d97de8ed
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 2875e282519f0d54c95a3e6bb49fffc6
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: 7482707b802681345b5b400dd8de2fc6
   m_configObjects: {}

@@ -55,10 +55,7 @@ public class CanvasManager : MonoBehaviour
         else
         {
             notepad.transform.localPosition = new Vector3(xTrack, yTrack, 0);
-            Debug.Log("snap");
         }
-
-        Debug.Log(noteState);
     }
 
     public void DisplayDialogue(string speakerName, string dialogue)

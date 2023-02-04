@@ -84,6 +84,22 @@ public class CodeEntryManager : MonoBehaviour
             GameManager.instance.SetEnteredCode(digits);
 
             // check for correct code and then show either victory or apply punishment
+            bool isCorrect = true;
+            for (int i = 0; i < 4; i++)
+                if (digits[i] != GameManager.instance.GetCorrectCode()[i])
+                    isCorrect = false;
+            if(isCorrect)
+            {
+                GameManager.instance.LoadScene("VictoryScene");
+            }
+            else // incorrect guess
+            {
+                // change spawn point and send player back to hub
+                GameManager.instance.SetSpawnPoint(new Vector2(0, 0)); // may want to randomize where this puts you (or predetermined in a crunch)
+                GameManager.instance.LoadScene("Hub");
+                
+                // also increment time by some amount here as a penalty (time system not implemented yet) <------ UNFINISHED UNFINISHED UNFINISHED
+            }
         }
     }
 }
