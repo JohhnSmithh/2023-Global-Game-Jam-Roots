@@ -5,6 +5,7 @@ using UnityEngine;
 public class CodeNPCData : MonoBehaviour
 {
     [SerializeField] private int clueIndex;
+    [SerializeField] private string npcName;
     [SerializeField] private string clueMessage;
     public bool hasSpoken;
 
@@ -13,12 +14,17 @@ public class CodeNPCData : MonoBehaviour
         hasSpoken = false; // should replace later with whether they have spoken as stored in the GameManager with clue structure
     }
 
-    public int getIndex()
+    public int GetIndex()
     {
         return clueIndex;
     }
 
-    public string getMessage()
+    public string GetName()
+    {
+        return npcName;
+    }
+
+    public string GetMessage()
     {
         return clueMessage;
     }

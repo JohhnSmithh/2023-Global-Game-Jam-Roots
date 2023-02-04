@@ -22,8 +22,8 @@ public class CameraController : MonoBehaviour
 
         // load UI elements
         Instantiate(platformerCanvas, transform);
-        // set position of canvas so that it is in front of the camera
-        platformerCanvas.transform.localPosition = new Vector3(0, 0, 10);
+
+        GameObject.Find("Joe").GetComponent<PlayerController>().InstantiateCanvasManager(gameObject.transform.GetChild(0).gameObject.GetComponent<CanvasManager>());
     }
 
     // Update is called once per frame

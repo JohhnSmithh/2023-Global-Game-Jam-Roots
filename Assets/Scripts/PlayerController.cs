@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private const float BOUNCE_SPEED_Y = 8.5f;
     private const float BOUNCE_TIME = 0.6f;
     private const float INTERACT_WINDOW = 0.1f;
+    private const float DIALOGUE_TIME = 5.0f;
 
     // variables
     private enum RollingState { LEFT, RIGHT, NONE, BOUNCING };
@@ -22,10 +23,13 @@ public class PlayerController : MonoBehaviour
     private float localMaxSpeed;
     private bool isAttemptingInteract;
     private float interactTimer;
+    private bool isInDialogue;
+    private float dialogueTimer;
 
     // Unity variables
     Rigidbody2D rb;
     BoxCollider2D box;
+    CanvasManager canvasManager;
 
     // Layer masks
     [SerializeField] private LayerMask platforms;
@@ -41,14 +45,28 @@ public class PlayerController : MonoBehaviour
         localMaxSpeed = INIT_ROLL_SPEED;
         isAttemptingInteract = false;
         interactTimer = 0;
+        isInDialogue = false;
+        dialogueTimer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isInDialogue) // dialogue, virtually no controls, only free fall with no horizontal
+        {
+            if (dialogueTimer > DIALOGUE_TIME)
+            {
+                isInDialogue = false;
+                canvasManager.exitDialogue();
+            }
 
+            dialogueTimer += Time.deltaTime;
+
+            // stop all horiontal movement while in dialogue
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
         // check bouncing state (prevents player control)
-        if(rolling == RollingState.BOUNCING)
+        else if (rolling == RollingState.BOUNCING)
         {
             if (bounceTimer > BOUNCE_TIME)
                 rolling = RollingState.NONE;
@@ -56,30 +74,30 @@ public class PlayerController : MonoBehaviour
             bounceTimer += Time.deltaTime;
         }
         // checks rolling state (constrains player movement and checks for bouncing
-        else if(rolling != RollingState.NONE)
+        else if (rolling != RollingState.NONE)
         {
             // apply roll force if rolling
-            rb.AddForce(new Vector2((rolling==RollingState.LEFT?-1:1)*ROLL_FORCE*Time.deltaTime, 0), ForceMode2D.Force);
+            rb.AddForce(new Vector2((rolling == RollingState.LEFT ? -1 : 1) * ROLL_FORCE * Time.deltaTime, 0), ForceMode2D.Force);
 
             // cap rolling speed
-            if(rb.velocity.x > MAX_ROLL_SPEED)
+            if (rb.velocity.x > MAX_ROLL_SPEED)
             {
                 rb.velocity = new Vector2(MAX_ROLL_SPEED, rb.velocity.y);
             }
-            else if(rb.velocity.x < -MAX_ROLL_SPEED)
+            else if (rb.velocity.x < -MAX_ROLL_SPEED)
             {
                 rb.velocity = new Vector2(-MAX_ROLL_SPEED, rb.velocity.y);
             }
 
             // check for wall bounce state
-            if(rolling == RollingState.LEFT && IsTouchingLeftWall())
+            if (rolling == RollingState.LEFT && IsTouchingLeftWall())
             {
                 rolling = RollingState.BOUNCING;
                 bounceTimer = 0;
                 float bounceFactor = (localMaxSpeed - INIT_ROLL_SPEED) / (MAX_ROLL_SPEED - INIT_ROLL_SPEED);
                 rb.velocity = new Vector2(BOUNCE_SPEED_X * bounceFactor, BOUNCE_SPEED_Y * bounceFactor);
             }
-            else if(rolling == RollingState.RIGHT && IsTouchingRightWall())
+            else if (rolling == RollingState.RIGHT && IsTouchingRightWall())
             {
                 rolling = RollingState.BOUNCING;
                 bounceTimer = 0;
@@ -87,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(-BOUNCE_SPEED_X * bounceFactor, BOUNCE_SPEED_Y * bounceFactor);
             }
             // end rolling if not only holding proper direction
-            else if((rolling == RollingState.LEFT && (Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A))) || (rolling == RollingState.RIGHT && (Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D))) )
+            else if ((rolling == RollingState.LEFT && (Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A))) || (rolling == RollingState.RIGHT && (Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.D))))
             {
                 rolling = RollingState.NONE;
             }
@@ -104,7 +122,7 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(WALK_SPEED, rb.velocity.y);
 
                 // enter right roll
-                if(Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded())
+                if (Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded())
                 {
                     rb.velocity = new Vector2(INIT_ROLL_SPEED, rb.velocity.y);
                     rolling = RollingState.RIGHT;
@@ -123,26 +141,26 @@ public class PlayerController : MonoBehaviour
                     localMaxSpeed = INIT_ROLL_SPEED;
                 }
             }
-            else
+            else // no inputs -> just kinda stop moving like Hollow Knight (no momentum/sliding)
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
         }
 
         // Jumping
-        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !isInDialogue)
         {
             rb.velocity = new Vector2(rb.velocity.x, INIT_JUMP_SPEED);
         }
 
         // interacting input
-        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             isAttemptingInteract = true;
             interactTimer = 0;
         }
         // timer system necessary because a straight input check in OnTriggerStay updates once per physics update and therefore could miss an input
-        if(isAttemptingInteract)
+        if (isAttemptingInteract)
         {
             if (interactTimer > INTERACT_WINDOW)
                 isAttemptingInteract = false;
@@ -158,7 +176,13 @@ public class PlayerController : MonoBehaviour
             // only permits one interaction
             collision.gameObject.GetComponent<CodeNPCData>().hasSpoken = true;
 
-            // display message here (requires Canvas)
+            // display message here
+            canvasManager.displayDialogue(collision.gameObject.GetComponent<CodeNPCData>().GetName(), collision.gameObject.GetComponent<CodeNPCData>().GetMessage());
+
+            // start timer for being locked in dialogue
+            isInDialogue = true;
+            dialogueTimer = 0;
+            rb.velocity = new Vector2(0, 0); // stop player in place upon entering dialogue
         }
     }
 
@@ -226,6 +250,16 @@ public class PlayerController : MonoBehaviour
 
         // return if boxcast hit a platform
         return ray.collider != null;
+    }
+
+    #endregion
+
+    #region CRINGE
+
+    // silly workaround to guarantee that PlayerController has a reference to the CanvasManager that is instantiated in the Start of CameraController
+    public void InstantiateCanvasManager(CanvasManager manager)
+    {
+        canvasManager = manager;
     }
 
     #endregion

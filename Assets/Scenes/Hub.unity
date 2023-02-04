@@ -1005,6 +1005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CodeNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709740, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: npcName
+      value: Jeffery the Green Cube
+      objectReference: {fileID: 0}
     - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
       propertyPath: m_RootOrder
       value: 4
