@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         public string sceneName;
         public Vector2 spawnPoint;
+        public string notebookData;
     }
     private SaveData data;
 
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
             // initialize save data to default values (used when no save data file is found)
             data.sceneName = "Hub";
             data.spawnPoint = new Vector2(0, 0);
+            data.notebookData = "Notes:\n";
         }
         else
         {
@@ -67,6 +69,11 @@ public class GameManager : MonoBehaviour
         return data.spawnPoint;
     }
 
+    public string GetNotebookText()
+    {
+        return data.notebookData;
+    }
+
     // get time in game (used to determine time of setting)
     public float GetGameTime()
     {
@@ -81,6 +88,11 @@ public class GameManager : MonoBehaviour
     public void setSpawnPoint(Vector2 spawnPoint)
     {
         data.spawnPoint = spawnPoint;
+    }
+
+    public void setNotebookText(string notebookText)
+    {
+        data.notebookData = notebookText;
     }
 
     #endregion
