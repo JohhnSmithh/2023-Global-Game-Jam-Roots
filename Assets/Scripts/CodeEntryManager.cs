@@ -69,5 +69,11 @@ public class CodeEntryManager : MonoBehaviour
             if (digits[selectedIndex] <= -1)
                 digits[selectedIndex] = 9;
         }
+
+        // return to hub with escape key
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.instance.LoadScene("Hub");
+        }
     }
 }
