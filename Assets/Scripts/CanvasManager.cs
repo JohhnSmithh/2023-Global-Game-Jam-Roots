@@ -55,10 +55,7 @@ public class CanvasManager : MonoBehaviour
         else
         {
             notepad.transform.localPosition = new Vector3(xTrack, yTrack, 0);
-            Debug.Log("snap");
         }
-
-        Debug.Log(noteState);
     }
 
     public void DisplayDialogue(string speakerName, string dialogue)
@@ -67,7 +64,7 @@ public class CanvasManager : MonoBehaviour
         speakerText.SetText(speakerName);
         dialogueText.SetText(dialogue);
         // add dialogue to notebook
-        GameManager.instance.setNotebookText(GameManager.instance.GetNotebookText() + "- " + dialogue + "\n");
+        GameManager.instance.SetNotebookText(GameManager.instance.GetNotebookText() + "- " + dialogue + "\n");
         noteText.SetText(GameManager.instance.GetNotebookText());
 
         // activate all text/image obejcts for dialogue

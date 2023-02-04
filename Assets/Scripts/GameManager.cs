@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
         public string sceneName;
         public Vector2 spawnPoint;
         public string notebookData;
+        public int[] correctCode;
+        public int[] enteredCode;
     }
     private SaveData data;
 
@@ -31,11 +33,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this);
 
             data = new SaveData();
-
-            // initialize save data to default values (used when no save data file is found)
-            data.sceneName = "Hub";
-            data.spawnPoint = new Vector2(0, 0);
-            data.notebookData = "Notes:\n";
         }
         else
         {
@@ -59,6 +56,16 @@ public class GameManager : MonoBehaviour
 
     #region DATA FUNCTIONS
 
+    private void InitializeSaveData()
+    {
+        // initialize save data to default values
+        data.sceneName = "Hub";
+        data.spawnPoint = new Vector2(0, 0);
+        data.notebookData = "Notes:\n";
+        data.correctCode = new int[4] { 6, 9, 6, 9 };
+        data.enteredCode = new int[4] { 0, 0, 0, 0 };
+    }
+
     public string GetSceneName()
     {
         return data.sceneName;
@@ -74,25 +81,45 @@ public class GameManager : MonoBehaviour
         return data.notebookData;
     }
 
+    public int[] GetCorrectCode()
+    {
+        return data.correctCode;
+    }
+
+    public int[] GetEnteredCode()
+    {
+        return data.enteredCode;
+    }
+
     // get time in game (used to determine time of setting)
     public float GetGameTime()
     {
         return Time.time;
     }
 
-    public void setSceneName(string sceneName)
+    public void SetSceneName(string sceneName)
     {
         data.sceneName = sceneName;
     }
 
-    public void setSpawnPoint(Vector2 spawnPoint)
+    public void SetSpawnPoint(Vector2 spawnPoint)
     {
         data.spawnPoint = spawnPoint;
     }
 
-    public void setNotebookText(string notebookText)
+    public void SetNotebookText(string notebookText)
     {
         data.notebookData = notebookText;
+    }
+
+    public void SetCorrectCode(int[] correctCode)
+    {
+        data.correctCode = correctCode;
+    }
+
+    public void SetEnteredCode(int[] newCode)
+    {
+        data.enteredCode = newCode;
     }
 
     #endregion
@@ -105,7 +132,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        LoadScene("GameScene");
+        // initialize save data to default values at start of game
+        data.sceneName = "Hub";
+        data.spawnPoint = new Vector2(0, 0);
+        data.notebookData = "Notes:\n";
+        data.correctCode = new int[4] { 6, 9, 6, 9 };
+        data.enteredCode = new int[4] { 0, 0, 0, 0 };
+
+        LoadScene("Hub"); // may want to change to a 'tutorial scene with a sign for controls and walking to town
     }
 
     public void LoadInfoScene()
