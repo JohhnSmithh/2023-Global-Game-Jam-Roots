@@ -10,6 +10,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image dialogueBackdrop;
+    [SerializeField] private GameObject notepad;
+    [SerializeField] private TextMeshProUGUI noteText;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,8 @@ public class CanvasManager : MonoBehaviour
         // update all text
         speakerText.SetText(speakerName);
         dialogueText.SetText(dialogue);
+        // add dialogue to notebook
+        noteText.SetText(noteText.text + "- " + dialogue + "\n");
 
         // activate all text/image obejcts for dialogue
         speakerText.gameObject.SetActive(true);
