@@ -33,13 +33,15 @@ public class CanvasManager : MonoBehaviour
         dialogueBackdrop.gameObject.SetActive(false);
 
         noteState = NoteState.HIDDEN_LEFT;
+
+        noteText.SetText(GameManager.instance.GetNotebookText());
     }
 
     // Update is called once per frame
     void Update()
     {
         // display current time in seconds rounded to two decimal places
-        timeText.SetText("Time: " + Mathf.Round(100 * GameManager.instance.getGameTime()) / 100);
+        timeText.SetText("Time: " + Mathf.Round(100 * GameManager.instance.GetGameTime()) / 100);
 
         // set notepad positions to track to
         xTrack = NOTE_POSITIONS[(int) noteState, 0];
@@ -65,7 +67,8 @@ public class CanvasManager : MonoBehaviour
         speakerText.SetText(speakerName);
         dialogueText.SetText(dialogue);
         // add dialogue to notebook
-        noteText.SetText(noteText.text + "- " + dialogue + "\n");
+        GameManager.instance.setNotebookText(GameManager.instance.GetNotebookText() + "- " + dialogue + "\n");
+        noteText.SetText(GameManager.instance.GetNotebookText());
 
         // activate all text/image obejcts for dialogue
         speakerText.gameObject.SetActive(true);

@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
 
+        // assign player position based on spawn point
+        transform.position = GameManager.instance.GetSpawnPoint();
+        rb.sleepMode = RigidbodySleepMode2D.NeverSleep;
+
         rolling = RollingState.NONE;
         bounceTimer = 0;
         localMaxSpeed = INIT_ROLL_SPEED;
@@ -197,6 +201,10 @@ public class PlayerController : MonoBehaviour
 
             // close notes if opened
             canvasManager.NoteDown();
+        }
+        else if(collision.CompareTag("Transition") && isAttemptingInteract)
+        {
+            GameManager.instance.TransitionScene(collision.gameObject.GetComponent<TransitionData>());
         }
     }
 
