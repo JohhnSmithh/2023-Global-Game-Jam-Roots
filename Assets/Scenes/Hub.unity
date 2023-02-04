@@ -123,6 +123,164 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &212712171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8668764703507709736, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_Name
+      value: CodeNPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709738, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.20983982
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709738, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709740, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: npcName
+      value: Evil Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709740, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: clueIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709740, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: clueMessage
+      value: You fool, perish in the face of my insurmountable power and magnificence
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+--- !u!1001 &634750382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8668764703507709736, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_Name
+      value: CodeNPC (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709738, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709738, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.27430224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709738, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709740, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: npcName
+      value: Margaret the Blue Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709740, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: clueIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709740, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: clueMessage
+      value: Hey, I'm Margaret, I don't know your name and I don't care
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668764703507709741, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40949b34695b6d54bb6b1c3eb3c627f8, type: 3}
 --- !u!1 &712661288
 GameObject:
   m_ObjectHideFlags: 0

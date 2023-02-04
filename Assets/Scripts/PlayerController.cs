@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             if (dialogueTimer > DIALOGUE_TIME)
             {
                 isInDialogue = false;
-                canvasManager.exitDialogue();
+                canvasManager.ExitDialogue();
             }
 
             dialogueTimer += Time.deltaTime;
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // interacting input
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             isAttemptingInteract = true;
             interactTimer = 0;
@@ -167,6 +167,17 @@ public class PlayerController : MonoBehaviour
 
             interactTimer += Time.deltaTime;
         }
+
+        // Notepad controls (always work unless talking)
+        if(!isInDialogue)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+                canvasManager.NoteLeft();
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+                canvasManager.NoteRight();
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+                canvasManager.NoteDown();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -177,12 +188,15 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.GetComponent<CodeNPCData>().hasSpoken = true;
 
             // display message here
-            canvasManager.displayDialogue(collision.gameObject.GetComponent<CodeNPCData>().GetName(), collision.gameObject.GetComponent<CodeNPCData>().GetMessage());
+            canvasManager.DisplayDialogue(collision.gameObject.GetComponent<CodeNPCData>().GetName(), collision.gameObject.GetComponent<CodeNPCData>().GetMessage());
 
             // start timer for being locked in dialogue
             isInDialogue = true;
             dialogueTimer = 0;
             rb.velocity = new Vector2(0, 0); // stop player in place upon entering dialogue
+
+            // close notes if opened
+            canvasManager.NoteDown();
         }
     }
 
