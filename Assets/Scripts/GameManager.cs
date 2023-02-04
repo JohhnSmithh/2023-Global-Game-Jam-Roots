@@ -71,7 +71,11 @@ public class GameManager : MonoBehaviour
 
     #region DATA FUNCTIONS
 
-    // getters and setters for save data
+    // get time in game (used to determine time of setting)
+    public float getGameTime()
+    {
+        return Time.time;
+    }
 
     #endregion
 

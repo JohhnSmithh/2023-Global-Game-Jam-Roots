@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3a536a365b18047bcd70ccc88df296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformerCanvas: {fileID: 5993122147334685338, guid: fd2f5192bd58b97459fcae13b157478e, type: 3}
   leftBound: -25.54
   rightBound: 25.68
   topBound: 3.5

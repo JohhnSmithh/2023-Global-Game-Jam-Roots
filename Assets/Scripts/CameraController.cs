@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     private GameObject player;
 
     // canvas
-    // [SerializeField] private GameObject platformerCanvas;
+    [SerializeField] private GameObject platformerCanvas;
 
     // variables
     [SerializeField] private float leftBound;
@@ -21,9 +21,9 @@ public class CameraController : MonoBehaviour
         player = GameObject.Find("Joe");
 
         // load UI elements
-        // Instantiate(platformerCanvas, transform);
+        Instantiate(platformerCanvas, transform);
         // set position of canvas so that it is in front of the camera
-        // platformerCanvas.transform.localPosition = new Vector3(0, 0, 10);
+        platformerCanvas.transform.localPosition = new Vector3(0, 0, 10);
     }
 
     // Update is called once per frame
