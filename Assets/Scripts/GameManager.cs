@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour
     [System.Serializable]
     private class SaveData
     {
-
+        public string sceneName;
+        public Vector2 spawnPoint;
+        public string notebookData;
+        public int[] correctCode;
+        public int[] enteredCode;
     }
     private SaveData data;
 
@@ -29,18 +33,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this);
 
             data = new SaveData();
-            string path = Application.persistentDataPath + "/savedata.json";
-            if (File.Exists(path))
-            {
-                // read json file into data object
-                string json = File.ReadAllText(path);
-                data = JsonUtility.FromJson<SaveData>(json);
-            }
-            else // default save file configuration
-            {
-                // initialize save data to default values (used when no save data file is found)
-                
-            }
         }
         else
         {
@@ -60,18 +52,75 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void OnApplicationQuit()
-    {
-        // save SaveData to json file
-        string json = JsonUtility.ToJson(data);
-        File.WriteAllText(Application.persistentDataPath + "/savedata.json", json);
-    }
-
     #endregion
 
     #region DATA FUNCTIONS
 
-    // getters and setters for save data
+    private void InitializeSaveData()
+    {
+        // initialize save data to default values
+        data.sceneName = "Hub";
+        data.spawnPoint = new Vector2(0, 0);
+        data.notebookData = "Notes:\n";
+        data.correctCode = new int[4] { 6, 9, 6, 9 };
+        data.enteredCode = new int[4] { 0, 0, 0, 0 };
+    }
+
+    public string GetSceneName()
+    {
+        return data.sceneName;
+    }
+
+    public Vector2 GetSpawnPoint()
+    {
+        return data.spawnPoint;
+    }
+
+    public string GetNotebookText()
+    {
+        return data.notebookData;
+    }
+
+    public int[] GetCorrectCode()
+    {
+        return data.correctCode;
+    }
+
+    public int[] GetEnteredCode()
+    {
+        return data.enteredCode;
+    }
+
+    // get time in game (used to determine time of setting)
+    public float GetGameTime()
+    {
+        return Time.time;
+    }
+
+    public void SetSceneName(string sceneName)
+    {
+        data.sceneName = sceneName;
+    }
+
+    public void SetSpawnPoint(Vector2 spawnPoint)
+    {
+        data.spawnPoint = spawnPoint;
+    }
+
+    public void SetNotebookText(string notebookText)
+    {
+        data.notebookData = notebookText;
+    }
+
+    public void SetCorrectCode(int[] correctCode)
+    {
+        data.correctCode = correctCode;
+    }
+
+    public void SetEnteredCode(int[] newCode)
+    {
+        data.enteredCode = newCode;
+    }
 
     #endregion
 
@@ -83,7 +132,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        LoadScene("GameScene");
+        // initialize save data to default values at start of game
+        data.sceneName = "Hub";
+        data.spawnPoint = new Vector2(0, 0);
+        data.notebookData = "Notes:\n";
+        data.correctCode = new int[4] { 6, 9, 6, 9 };
+        data.enteredCode = new int[4] { 0, 0, 0, 0 };
+
+        LoadScene("Hub"); // may want to change to a 'tutorial scene with a sign for controls and walking to town
     }
 
     public void LoadInfoScene()
@@ -99,6 +155,14 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void TransitionScene(TransitionData transitionData)
+    {
+        data.sceneName = transitionData.sceneName;
+        data.spawnPoint = transitionData.spawnPoint;
+
+        LoadScene(data.sceneName);
     }
 
     #endregion

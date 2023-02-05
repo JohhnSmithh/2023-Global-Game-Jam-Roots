@@ -5,16 +5,61 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MenuScene.unity
     guid: fdd2b1afc64647b46af836338c43493c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/InfoScene.unity
     guid: f7779065772db0a498c7435298bb9a92
+  - enabled: 1
+    path: Assets/Scenes/Hub.unity
+    guid: 24a6e87da08eff949937148df74a2691
+  - enabled: 1
+    path: Assets/Scenes/CodeScene.unity
+    guid: 56ace9422920e764d91da700359d158d
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room1.unity
+    guid: 4ca1bf3d52d86a2478d66bde2bdf755d
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room2.unity
+    guid: 44d587866ae9210499759eb1e257c908
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room3.unity
+    guid: 33eec197c2178ae41b2819633cae0510
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room4.unity
+    guid: 76c81b84bdf457a48ad2a1c660110ddd
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room5.unity
+    guid: 97c1797796cbf5445bb36f9529eaa1de
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room6.unity
+    guid: 325b1a4567562d844973c016a0ebd087
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room7.unity
+    guid: a46d1918e257b0c4e82d68d4bc135c8e
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room8.unity
+    guid: 52768d5861da3eb439ac20150bed1c4e
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room9.unity
+    guid: 0334ed7d82388bd4db7031879d57eac4
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room10.unity
+    guid: 26a04edee5bba384fa3851e73aef973e
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room11.unity
+    guid: 3cf27e71f8b7ab74e91e54bfc93ad7e7
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room12.unity
+    guid: 42a708e1b3bf4c64f9175c401e2b8d9e
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Room13.unity
+    guid: 636ab088afca8ce47a625723d97de8ed
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 2875e282519f0d54c95a3e6bb49fffc6
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: 7482707b802681345b5b400dd8de2fc6
   m_configObjects: {}
