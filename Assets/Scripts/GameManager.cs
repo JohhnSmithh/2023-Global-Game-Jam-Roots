@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
     // instance
     public static GameManager instance;
 
-    [SerializeField]
-    private List<GameObject> informantSpawnList;
-
     //Game time stuff
     private float gameTime;
 
@@ -26,19 +23,108 @@ public class GameManager : MonoBehaviour
         public int[] correctCode;
         public int[] enteredCode;
 
-        public string[] livingClues;
-        public string[] deadClues;
-        public string[] informantClueTypes;
-        public string[] informantClues;
-        public GameObject[] informantLocations;
-        public int[] characterLocations;
-        public int[] hitList;
-        public int[] deathTimes;
-        public bool[] livingList;
+        public string[] livingClues = new string[12];
+        public string[] deadClues = new string[12];
+        public string[] informantClueTypes = new string[5];
+        public string[] informantClues = new string[5];
+        public GameObject[] informantLocations = new GameObject[5];
+        public int[] characterLocations = new int[13];
+        public int[] hitList = new int[17];
+        public int[] deathTimes = new int[17];
+        public bool[] livingList = new bool[17];
 
-        public int nextHit;
+        public int nextHit = 0;
     }
     private SaveData data;
+
+    //Generates locations of informatants
+    public void ChangeInformantLocations()
+    {
+        //Make a copy of spawn list to remove stuff from - prevents two characters on one spawn
+        List<GameObject> spawnList = new List<GameObject>(SpawnManager.instance.GetInformantSpawnList());
+
+        //Check for ded bodies
+        for (int i = 0; i < 5; i++)
+            if (!IsAlive(i))
+                spawnList.Remove(data.informantLocations[i]);
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (IsAlive(12 + i))
+            {
+                int r = UnityEngine.Random.Range(0, spawnList.Count);
+
+                //Set da location
+                data.informantLocations[i] = spawnList[r];
+
+                //Remove spawn from spawn list
+                spawnList.Remove(spawnList[r]);
+            }
+        }
+    }
+
+    //Generates informant clues
+    public void ChangeInformantClues()
+    {
+        int hour, minute;
+        string z, timePostfix;
+
+        for (int i = 0; i < 5; i++)
+        {
+            switch (GetInformantClueType(i))
+            {
+                case "Time":
+
+                    //Time conversion
+                    hour = 6 + (int)(GetDeathTimes()[GetNextHitIndex()] / 60);
+                    minute = (int)(GetDeathTimes()[GetNextHitIndex()] % 60);
+                    z = "";
+                    timePostfix = "PM";
+
+                    //Auxiliary text
+                    if (minute < 10)
+                        z = "0";
+                    if (hour > 12)
+                    {
+                        hour -= 12;
+                        timePostfix = "AM";
+                    }
+
+                    //Make the message
+                    data.informantClues[i] = "I hear voices in the dumpsters. They said that the next gig is going down at " + hour + ":" + z + minute + " " + timePostfix;
+                    break;
+
+
+                case "Address":
+                    
+                    //If a garlic is next to die
+                    if (data.hitList[data.nextHit] >= 12)
+                    {
+                        //Make da message
+                        data.informantClues[i] = "The voices! They're getting louder! One of my kind is next...";
+                        break;
+                    }
+
+                    //Make da message
+                    data.informantClues[i] = "The rats talk at night. They told me that a gig is happening soon at [Address]";
+                    break;
+
+                case "Location":
+
+                    //If a garlic is next to die
+                    if (data.hitList[data.nextHit] >= 12)
+                    {
+                        //Make da message
+                        data.informantClues[i] = "The voices! They're getting louder! One of my kind is next...";
+                        break;
+                    }
+
+                    //Make da message
+                    data.informantClues[i] = "A little weevil told me that something's going down in the [X] part of town";
+                    break;
+            }
+        }
+    }
 
     #region UNITY FUNCTIONS
 
@@ -58,6 +144,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); // destroy duplicate instance of singleton object
         }
+
+        //Check if hub
+        if(SceneManager.GetActiveScene().name == "Hub")
+        {
+            SpawnManager.instance.SpawnInformants();
+        }
     }
 
     // Start is called before the first frame update
@@ -75,6 +167,13 @@ public class GameManager : MonoBehaviour
         //Restart timer if on Menu
         if (SceneManager.GetActiveScene().name == "MenuScene")
             gameTime = 0;
+
+        //Check for death
+        else if(gameTime >= GetDeathTimes()[GetNextHitIndex()])
+        {
+            Murder(GetHitList()[GetNextHitIndex()]);
+            data.nextHit++; 
+        }
     }
 
     #endregion
@@ -161,11 +260,6 @@ public class GameManager : MonoBehaviour
     public bool IsAlive(int indx)
     {
         return data.livingList[indx];
-    }
-
-    public List<GameObject> GetInformantSpawnPoints()
-    {
-        return informantSpawnList;
     }
 
     // get time in game (used to determine time of setting)
@@ -261,7 +355,12 @@ public class GameManager : MonoBehaviour
     {
         InitializeSaveData();
 
-        //Start the timer 
+        //Generate the seed
+        SeedManager.GenerateSeed();
+
+        //Randomize starting locations and the clues for informants
+        ChangeInformantClues();
+        ChangeInformantLocations();
 
         LoadScene("Hub"); // may want to change to a 'tutorial scene with a sign for controls and walking to town
     }

@@ -42,7 +42,7 @@ public class CanvasManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // display current time in seconds rounded to two decimal places
+        //Time stuff
         hour = 6 + (int)(GameManager.instance.GetGameTime() / 60);
         minute = (int)(GameManager.instance.GetGameTime() % 60);
         z = "";
@@ -73,13 +73,14 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    public void DisplayDialogue(string speakerName, string dialogue)
+    public void DisplayDialogue(string speakerName, string dialogue, int index)
     {
         // update all text
         speakerText.SetText(speakerName);
         dialogueText.SetText(dialogue);
-        // add dialogue to notebook
-        GameManager.instance.SetNotebookText(GameManager.instance.GetNotebookText() + "- " + dialogue + "\n");
+        // add dialogue to notebook if they not a garlic
+        if(index < 12)
+            GameManager.instance.SetNotebookText(GameManager.instance.GetNotebookText() + "- " + dialogue + "\n");
         noteText.SetText(GameManager.instance.GetNotebookText());
 
         // activate all text/image obejcts for dialogue

@@ -14,6 +14,8 @@ public class CodeEntryManager : MonoBehaviour
     // variables
     private int[] digits;
     private int selectedIndex;
+    private int hour, minute;
+    private string z, timePostfix;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +34,21 @@ public class CodeEntryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // display current time in seconds rounded to two decimal places
-        timeText.SetText("Time: " + Mathf.Round(100 * GameManager.instance.GetGameTime()) / 100);
+        //Display time
+        hour = 6 + (int)(GameManager.instance.GetGameTime() / 60);
+        minute = (int)(GameManager.instance.GetGameTime() % 60);
+        z = "";
+        timePostfix = "PM";
+
+        if (minute < 10)
+            z = "0";
+        if (hour > 12)
+        {
+            hour -= 12;
+            timePostfix = "AM";
+        }
+
+        timeText.SetText(hour + ":" + z + minute + " " + timePostfix);
 
         // display digits to text
         for (int i = 0; i < 4; i++)

@@ -208,7 +208,7 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.GetComponent<CodeNPCData>().hasSpoken = true;
 
             // display message here
-            canvasManager.DisplayDialogue(collision.gameObject.GetComponent<CodeNPCData>().GetName(), collision.gameObject.GetComponent<CodeNPCData>().GetMessage());
+            canvasManager.DisplayDialogue(collision.gameObject.GetComponent<CodeNPCData>().GetName(), collision.gameObject.GetComponent<CodeNPCData>().GetMessage(), collision.gameObject.GetComponent<CodeNPCData>().GetIndex());
 
             // start timer for being locked in dialogue
             isInDialogue = true;

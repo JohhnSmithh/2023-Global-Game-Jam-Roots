@@ -6,7 +6,8 @@ public class CodeNPCData : MonoBehaviour
 {
     [SerializeField] private int clueIndex;
     [SerializeField] private string npcName;
-    [SerializeField] private string clueMessage;
+    [SerializeField] private string livingClueMessage;
+    [SerializeField] private string deadClueMessage;
     public bool hasSpoken;
 
     private void Start()
@@ -26,7 +27,13 @@ public class CodeNPCData : MonoBehaviour
 
     public string GetMessage()
     {
-        return clueMessage;
+        return GameManager.instance.IsAlive(clueIndex) ? livingClueMessage : deadClueMessage;
+    }
+
+    public void SetMessage(string livingMsg, string deadMsg)
+    {
+        livingClueMessage = livingMsg;
+        deadClueMessage = deadMsg;
     }
 
 }

@@ -7,28 +7,25 @@ using UnityEngine;
 
 public class SeedManager : MonoBehaviour
 {
-
     //Code
-    private int[] code;
+    private static int[] code;
 
     //List of live/dead clues, each character corresponds to an index
-    private string[] livingClueList;
-    private string[] deadClueList;
+    private static string[] livingClueList;
+    private static string[] deadClueList;
 
     //Informant stuff
-    private string[] informantClueTypeList;
-    private string[] informantClueList;
-    private GameObject[] informantLocationList;
+    private static string[] informantClueTypeList;
 
     //Character locations
-    private int[] characterLocationList;
+    private static int[] characterLocationList;
 
     //Death order
-    private int[] hitList;
-    private int[] deathTimes;
+    private static int[] hitList;
+    private static int[] deathTimes;
 
     //Generates the code and subsequent seeded info
-    public void GenerateSeed()
+    public static void GenerateSeed()
     {
         //Code
         code = new int[4];
@@ -451,137 +448,4 @@ public class SeedManager : MonoBehaviour
         GameManager.instance.SetHitList(hitList);
         GameManager.instance.SetDeathTimes(deathTimes);
     }
-
-    //Generates locations of informatants
-    public void ChangeInformantLocations()
-    {
-        //Make a copy of spawn list to remove stuff from - prevents two characters on one spawn
-        List<GameObject> spawnList = new List<GameObject>(GameManager.instance.GetInformantSpawnPoints());
-
-        //Check for ded bodies
-        for(int i = 0; i < 5; i++)
-            if(GameManager.instance.IsAlive(i))
-                spawnList.Remove(informantLocationList[i]);
-
-        for(int i = 0; i < 5; i++)
-        {
-            if (GameManager.instance.IsAlive(12 + i))
-            {
-                int r = UnityEngine.Random.Range(0, spawnList.Count);
-
-                //Set da location
-                informantLocationList[i] = spawnList[r];
-
-                //Remove spawn from spawn list
-                spawnList.Remove(spawnList[r]);
-            }
-        }
-
-        GameManager.instance.SetInformantLocations(informantLocationList);
-    }
-
-    //Generates informant clues
-    public void ChangeInformantClues()
-    {
-        for(int i = 0; i < 5; i++)
-        {
-            switch (GameManager.instance.GetInformantClueType(i))
-            {
-                case "Time":
-                    informantClueList[i] = "I hear voices in the dumpsters. They said that the next gig is going down at " + GameManager.instance.GetDeathTimes()[GameManager.instance.GetNextHitIndex()];
-                    break;
-
-                case "Address":
-                    if (GameManager.instance.GetHitList()[GameManager.instance.GetNextHitIndex()] >= 12)
-                    {
-                        informantClueList[i] = "The voices! They're getting louder! One of my kind is next...";
-                        break;
-                    }
-                    informantClueList[i] = "The rats talk at night. They told me that a gig is happening soon at [Address]";
-                    break;
-
-                case "Location":
-                    if (GameManager.instance.GetHitList()[GameManager.instance.GetNextHitIndex()] >= 12)
-                    {
-                        informantClueList[i] = "The voices! They're getting louder! One of my kind is next...";
-                        break;
-                    }
-                    informantClueList[i] = "A little weevil told me that something's going down in the [X] part of town";
-                    break;
-            }
-        }
-
-        GameManager.instance.SetInformantClues(informantClueList);
-    }
-
-    #region Getters
-
-    //Gets the code
-    public int[] GetCode() 
-    { 
-        return code; 
-    }
-
-    //Gets the clue for the person corresponding to the specified index
-    public string GetClue(int indx, bool alive)
-    {
-        if (alive)
-            return livingClueList[indx];
-        return deadClueList[indx];
-    }
-
-    #endregion
-
-    #region Debug
-
-    //Debugs all clues (alive OR dead)
-    public void PrintClues(bool alive) 
-    {
-        if (alive)
-        {
-            foreach (string clue in livingClueList) 
-                Debug.Log(clue);
-        }
-        else
-        {
-            foreach (string clue in deadClueList) 
-                Debug.Log(clue);
-        }
-    }
-
-    //Debugs the code
-    public void PrintCode()
-    {
-        Debug.Log(code[0] + " " + code[1] + " " + code[2] + " " + code[3]);
-    }
-
-    //Debugs all informant clues
-    public void PrintInformantClueTypes()
-    {
-        foreach (string clue in informantClueTypeList)
-            Debug.Log(clue);
-    }
-
-    //Debugs character locations
-    public void PrintCharacterLocations()
-    {
-        foreach (int character in characterLocationList)
-            Debug.Log(character);
-    }
-
-    //Debugs death order
-    public void PrintDeathOrder()
-    {
-        foreach (int character in hitList)
-            Debug.Log(character);
-    }
-
-    //Debugs death time
-    public void PrintDeathTimes()
-    {
-        foreach (int time in deathTimes)
-            Debug.Log(time);
-    }
-
-    #endregion
 }
