@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> informantSpawnList;
 
-    private float time;
+    //Game time stuff
+    private float gameTime;
 
     // save data
     [System.Serializable]
@@ -69,11 +70,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //Timer time
-        time += Time.deltaTime;
+        gameTime += Time.deltaTime;
 
         //Restart timer if on Menu
         if (SceneManager.GetActiveScene().name == "MenuScene")
-            time = 0;
+            gameTime = 0;
     }
 
     #endregion
@@ -170,7 +171,7 @@ public class GameManager : MonoBehaviour
     // get time in game (used to determine time of setting)
     public float GetGameTime()
     {
-        return time;
+        return gameTime;
     }
 
     public void SetSceneName(string sceneName)

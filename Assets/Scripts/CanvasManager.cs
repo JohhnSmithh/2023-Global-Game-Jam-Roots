@@ -23,6 +23,8 @@ public class CanvasManager : MonoBehaviour
     private enum NoteState { LEFT = 0, RIGHT = 1, HIDDEN_LEFT = 2, HIDDEN_RIGHT = 3 }
     private NoteState noteState;
     private float xTrack, yTrack;
+    private int hour, minute;
+    private string z, timePostfix;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,20 @@ public class CanvasManager : MonoBehaviour
     void Update()
     {
         // display current time in seconds rounded to two decimal places
-        timeText.SetText("Time: " + Mathf.Round(100 * GameManager.instance.GetGameTime()) / 100);
+        hour = 6 + (int)(GameManager.instance.GetGameTime() / 60);
+        minute = (int)(GameManager.instance.GetGameTime() % 60);
+        z = "";
+        timePostfix = "PM";
+
+        if (minute < 10)
+            z = "0";
+        if(hour > 12)
+        {
+            hour -= 12;
+            timePostfix = "AM";
+        }
+
+        timeText.SetText(hour + ":" + z + minute + " " + timePostfix);
 
         // set notepad positions to track to
         xTrack = NOTE_POSITIONS[(int) noteState, 0];
