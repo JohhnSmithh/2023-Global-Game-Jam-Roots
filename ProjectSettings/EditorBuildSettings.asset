@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/Scenes/CodeScene.unity
     guid: 56ace9422920e764d91da700359d158d
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room1.unity
+    path: Assets/Scenes/Rooms/Building1.unity
     guid: 4ca1bf3d52d86a2478d66bde2bdf755d
   - enabled: 1
-    path: Assets/Scenes/Rooms/Room2.unity
+    path: Assets/Scenes/Rooms/Building9.unity
     guid: 44d587866ae9210499759eb1e257c908
   - enabled: 1
     path: Assets/Scenes/Rooms/Room3.unity
