@@ -1141,7 +1141,7 @@ TextureImporter:
         width: 14
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1162,7 +1162,7 @@ TextureImporter:
         width: 11
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1185,7 +1185,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InteriorDesignKitSmall_32: -422291032
+      InteriorDesignKitSmall_47: 1446810345
       InteriorDesignKitSmall_1: 904707671
       InteriorDesignKitSmall_3: -495131470
       InteriorDesignKitSmall_43: -1060632862
@@ -1222,8 +1222,8 @@ TextureImporter:
       InteriorDesignKitSmall_5: -1711855787
       InteriorDesignKitSmall_15: -104526272
       InteriorDesignKitSmall_16: 421061550
-      InteriorDesignKitSmall_48: 287352856
       InteriorDesignKitSmall_49: 1105911522
+      InteriorDesignKitSmall_48: 287352856
       InteriorDesignKitSmall_11: -1789103394
       InteriorDesignKitSmall_38: 2026802233
       InteriorDesignKitSmall_22: -106343036
@@ -1232,9 +1232,9 @@ TextureImporter:
       InteriorDesignKitSmall_44: -600922934
       InteriorDesignKitSmall_46: -136781777
       InteriorDesignKitSmall_28: 1009606925
-      InteriorDesignKitSmall_47: 1446810345
-      InteriorDesignKitSmall_17: -358541143
+      InteriorDesignKitSmall_32: -422291032
       InteriorDesignKitSmall_27: 316211817
+      InteriorDesignKitSmall_17: -358541143
       InteriorDesignKitSmall_18: -689940944
   spritePackingTag: 
   pSDRemoveMatte: 0
