@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c159f9619518244a3803082d95a841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clueIndex: 0
+  clueIndex: -1
   npcName: 
   clueMessage: Hello There
   hasSpoken: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1014965147
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.39278913, g: 1, b: 0, a: 1}
