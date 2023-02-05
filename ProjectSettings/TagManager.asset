@@ -13,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - Platforms
-  - Player
+  - 
   - 
   - 
   - 
@@ -43,6 +43,18 @@ TagManager:
   - name: Triggers
     uniqueID: 1014965147
     locked: 0
+  - name: Background
+    uniqueID: 2226084179
+    locked: 0
+  - name: Background Decor
+    uniqueID: 2415707747
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 526969907
+    locked: 0
+  - name: Foreground Decor
+    uniqueID: 4221715847
     locked: 0
