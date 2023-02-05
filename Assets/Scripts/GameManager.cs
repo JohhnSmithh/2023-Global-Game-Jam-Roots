@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this);
 
             data = new SaveData();
+
+            InitializeSaveData();
         }
         else
         {
@@ -256,12 +258,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        // initialize save data to default values at start of game
-        data.sceneName = "Hub";
-        data.spawnPoint = new Vector2(0, 0);
-        data.notebookData = "Notes:\n";
-        data.correctCode = new int[4] { 6, 9, 6, 9 };
-        data.enteredCode = new int[4] { 0, 0, 0, 0 };
+        InitializeSaveData();
 
         //Start the timer 
 

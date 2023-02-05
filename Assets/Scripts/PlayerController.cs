@@ -25,11 +25,13 @@ public class PlayerController : MonoBehaviour
     private float interactTimer;
     private bool isInDialogue;
     private float dialogueTimer;
+    private bool facingLeft;
 
     // Unity variables
     Rigidbody2D rb;
     BoxCollider2D box;
-    CanvasManager canvasManager;
+    CanvasManager canvasManager; // initialized through function in different Start()
+    Animator anim;
 
     // Layer masks
     [SerializeField] private LayerMask platforms;
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
 
         // assign player position based on spawn point
         transform.position = GameManager.instance.GetSpawnPoint();
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
         interactTimer = 0;
         isInDialogue = false;
         dialogueTimer = 0;
+        facingLeft = false;
     }
 
     // Update is called once per frame
@@ -182,6 +186,18 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.DownArrow))
                 canvasManager.NoteDown();
         }
+
+        // determine facingLeft variable
+        if (rb.velocity.x < -0.01)
+            facingLeft = true;
+        if (rb.velocity.x > 0.01)
+            facingLeft = false;
+
+        // set animator values
+        anim.SetFloat("vertical_speed", rb.velocity.y);
+        anim.SetFloat("horizontal_speed", rb.velocity.x);
+        anim.SetBool("isRolling", rolling != RollingState.NONE);
+        anim.SetBool("facingLeft", facingLeft);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
