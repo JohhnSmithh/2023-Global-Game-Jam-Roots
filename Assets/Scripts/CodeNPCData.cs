@@ -8,11 +8,22 @@ public class CodeNPCData : MonoBehaviour
     [SerializeField] private string npcName;
     [SerializeField] private string livingClueMessage;
     [SerializeField] private string deadClueMessage;
-    public bool hasSpoken;
+    [SerializeField] public bool hasSpoken;
+    [SerializeField] private bool alive;
+
+    Animator animator;
 
     private void Start()
     {
         hasSpoken = false; // should replace later with whether they have spoken as stored in the GameManager with clue structure
+        alive = true;
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        alive = GameManager.instance.IsAlive(clueIndex);
+        animator.SetBool("isDead", !alive);
     }
 
     public int GetIndex()
@@ -27,7 +38,7 @@ public class CodeNPCData : MonoBehaviour
 
     public string GetMessage()
     {
-        return GameManager.instance.IsAlive(clueIndex) ? livingClueMessage : deadClueMessage;
+        return alive ? livingClueMessage : deadClueMessage;
     }
 
     public void SetMessage(string livingMsg, string deadMsg)

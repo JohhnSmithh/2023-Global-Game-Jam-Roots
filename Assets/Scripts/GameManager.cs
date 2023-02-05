@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         public int[] characterLocations = new int[13];
         public int[] hitList = new int[17];
         public int[] deathTimes = new int[17];
-        public bool[] livingList = new bool[17];
+        public bool[] livingList = new bool[17] { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true };
 
         public int nextHit = 0;
     }
@@ -62,6 +62,15 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public int Find(int[] arr, int num)
+    {
+        for(int i = 0; i < arr.Length; i++)
+            if (arr[i] == num)
+                return i;
+        return -1;
+    }
+
 
     //Generates informant clues
     public void ChangeInformantClues()
@@ -106,7 +115,7 @@ public class GameManager : MonoBehaviour
                     }
 
                     //Make da message
-                    data.informantClues[i] = "The rats talk at night. They told me that a gig is happening soon at [Address]";
+                    data.informantClues[i] = "The rats talk at night. They told me that a gig is happening soon in Building " + Find(data.characterLocations, GetHitList()[GetNextHitIndex()]);
                     break;
 
                 case "Location":
@@ -118,6 +127,8 @@ public class GameManager : MonoBehaviour
                         data.informantClues[i] = "The voices! They're getting louder! One of my kind is next...";
                         break;
                     }
+                    //Find the building
+                    int Find(data.characterLocations, GetHitList()[GetNextHitIndex()]);
 
                     //Make da message
                     data.informantClues[i] = "A little weevil told me that something's going down in the [X] part of town";
@@ -172,7 +183,9 @@ public class GameManager : MonoBehaviour
         else if(gameTime >= GetDeathTimes()[GetNextHitIndex()])
         {
             Murder(GetHitList()[GetNextHitIndex()]);
-            data.nextHit++; 
+            data.nextHit++;
+            ChangeInformantClues();
+            SpawnManager.instance.RefreshInformatants();
         }
     }
 

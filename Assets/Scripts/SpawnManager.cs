@@ -16,6 +16,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> informantSpawnList;
 
+    private List<GameObject> currentInformants;
+
     [SerializeField]
     private List<Vector3> charOffsets;
 
@@ -33,6 +35,8 @@ public class SpawnManager : MonoBehaviour
         {
             Destroy(gameObject); // destroy duplicate instance of singleton object
         }
+
+        currentInformants = new List<GameObject>();
     }
 
     // Start is called before the first frame update
@@ -60,14 +64,9 @@ public class SpawnManager : MonoBehaviour
 
             //Give them their respective clues
             obj.GetComponent<CodeNPCData>().SetMessage(GameManager.instance.GetInformantClue(i), "");
-        }
-    }
 
-    public void DeleteInformants()
-    {
-        for(int i = 0; i < informants.Count; i++)
-        {
-            Destroy(informants[i]);
+            //Add to the current informants list
+            currentInformants.Add(obj);
         }
     }
 
@@ -86,4 +85,11 @@ public class SpawnManager : MonoBehaviour
     }
 
     #endregion
+
+    public void RefreshInformatants()
+    {
+        for (int i = 0; i < 5; i++) 
+            currentInformants[i].GetComponent<CodeNPCData>().hasSpoken = false;
+        Debug.Log("Refreshed");
+    }
 }
