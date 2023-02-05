@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     // instance
     public static GameManager instance;
 
+    [SerializeField]
+    private List<GameObject> informantSpawnList;
+
+    private float time;
+
     // save data
     [System.Serializable]
     private class SaveData
@@ -19,6 +24,18 @@ public class GameManager : MonoBehaviour
         public string notebookData;
         public int[] correctCode;
         public int[] enteredCode;
+
+        public string[] livingClues;
+        public string[] deadClues;
+        public string[] informantClueTypes;
+        public string[] informantClues;
+        public GameObject[] informantLocations;
+        public int[] characterLocations;
+        public int[] hitList;
+        public int[] deathTimes;
+        public bool[] livingList;
+
+        public int nextHit;
     }
     private SaveData data;
 
@@ -49,7 +66,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Timer time
+        time += Time.deltaTime;
 
+        //Restart timer if on Menu
+        if (SceneManager.GetActiveScene().name == "MenuScene")
+            time = 0;
     }
 
     #endregion
@@ -64,7 +86,9 @@ public class GameManager : MonoBehaviour
         data.notebookData = "Notes:\n";
         data.correctCode = new int[4] { 6, 9, 6, 9 };
         data.enteredCode = new int[4] { 0, 0, 0, 0 };
-    }
+        data.livingList = new bool[17] {true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true };
+        data.nextHit = 0;
+}
 
     public string GetSceneName()
     {
@@ -91,10 +115,60 @@ public class GameManager : MonoBehaviour
         return data.enteredCode;
     }
 
+    public string GetClue(bool alive, int indx)
+    {
+        return alive ? data.livingClues[indx] : data.deadClues[indx];
+    }
+
+    public string GetInformantClueType(int indx)
+    {
+        return data.informantClueTypes[indx];
+    }
+
+    public string GetInformantClue(int indx)
+    {
+        return data.informantClues[indx];
+    }
+
+    public GameObject GetInformantLocation(int indx)
+    {
+        return data.informantLocations[indx];
+    }
+
+    public int GetCharacterLocation(int indx)
+    {
+        return data.characterLocations[indx];
+    }
+
+    public int[] GetHitList()
+    {
+        return data.hitList;
+    }
+
+    public int[] GetDeathTimes()
+    {
+        return data.deathTimes;
+    }
+
+    public int GetNextHitIndex()
+    {
+        return data.nextHit;
+    }
+
+    public bool IsAlive(int indx)
+    {
+        return data.livingList[indx];
+    }
+
+    public List<GameObject> GetInformantSpawnPoints()
+    {
+        return informantSpawnList;
+    }
+
     // get time in game (used to determine time of setting)
     public float GetGameTime()
     {
-        return Time.time;
+        return time;
     }
 
     public void SetSceneName(string sceneName)
@@ -122,6 +196,56 @@ public class GameManager : MonoBehaviour
         data.enteredCode = newCode;
     }
 
+    public void SetLivingClues(string[] livingClues)
+    {
+        data.livingClues = livingClues;
+    }
+
+    public void SetDeadClues(string[] deadClues)
+    {
+        data.deadClues = deadClues;
+    }
+
+    public void SetInformantClueTypes(string[] informantClueTypes)
+    {
+        data.informantClueTypes = informantClueTypes;
+    }
+
+    public void SetInformantClues(string[] informantClues)
+    {
+        data.informantClues = informantClues;
+    }
+
+    public void SetInformantLocations(GameObject[] informantLocations)
+    {
+        data.informantLocations = informantLocations;
+    }
+
+    public void SetCharacterLocations(int[] characterLocations)
+    {
+        data.characterLocations = characterLocations;
+    }
+
+    public void SetHitList(int[] hitList)
+    {
+        data.hitList = hitList;
+    }
+
+    public void SetDeathTimes(int[] deathTimes)
+    {
+        data.deathTimes = deathTimes;
+    }
+
+    public void Murder(int charI)
+    {
+        data.livingList[charI] = false;
+    }
+
+    public void Revive(int charI)
+    {
+        data.livingList[charI] = true;
+    }
+
     #endregion
 
     #region SCENE MANAGEMENT
@@ -138,6 +262,8 @@ public class GameManager : MonoBehaviour
         data.notebookData = "Notes:\n";
         data.correctCode = new int[4] { 6, 9, 6, 9 };
         data.enteredCode = new int[4] { 0, 0, 0, 0 };
+
+        //Start the timer 
 
         LoadScene("Hub"); // may want to change to a 'tutorial scene with a sign for controls and walking to town
     }
