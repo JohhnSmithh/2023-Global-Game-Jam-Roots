@@ -1,0 +1,1234 @@
+fileFormatVersion: 2
+guid: a68247e785e239740bfb12b406f0c14f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: InteriorDesignKit_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1812
+        width: 320
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b47442da6f12549b68ea1b513447fc
+      internalID: -718274502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_1
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1824
+        width: 128
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248ceecf206b1374aa51306b2036b113
+      internalID: 1574360488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_2
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1824
+        width: 576
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b273c6ded3779948bbd5e2bc1e3454a
+      internalID: 7956149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1580
+        width: 24
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94481f4534739b440b68d2919ea43454
+      internalID: 797060127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_4
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1708
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8227746ed31f2184982e2ee84ef3c2ca
+      internalID: 354816444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1708
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6193eed46f695d4ba10212350191e51
+      internalID: 1662679076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_6
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1708
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7070269a56c86ea4c9d4740630258e16
+      internalID: 1598342641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1708
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbe642a93244ba498ec89351b5e21a6
+      internalID: 44674538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_8
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1708
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e79693f9b57e0c46848f43fdc7976e4
+      internalID: 967873791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_9
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1708
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfe0b346a078fa44a74239470e0906f
+      internalID: 209242836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_10
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1708
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b89c42bcda2574185f28a4a21cecea
+      internalID: 425654530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_11
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1708
+        width: 84
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c70af13234628a41a025404944b9e71
+      internalID: 1476471552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_12
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1576
+        width: 48
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffe00ab0355fa549ba5bdca079366b5
+      internalID: -1524553835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_13
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1640
+        width: 28
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b595cbc4b759a8e42b60f61993de5632
+      internalID: -922526633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_14
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1448
+        width: 40
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eeb066106ed3ab4eac8b4227bdf50b6
+      internalID: -129371796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1580
+        width: 28
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199a49c712005984db97b9a2cf14c009
+      internalID: -701946687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_16
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1580
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87662ea9b3f7c444bbdc5b84d87b34b
+      internalID: 858726938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_17
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1580
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29ec98ab9384e443aced7723c2cc9e2
+      internalID: -157900776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_18
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1580
+        width: 32
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3481d1185071d4b9322dc61b19e465
+      internalID: 2052980766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_19
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1580
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bc8c4a5be18f14e97aee4b0d4fcbbb
+      internalID: -1779978409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_20
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1580
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b68340973b7624d95bdd426a16066d
+      internalID: -436917045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_21
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1580
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d157c68d2a4944ba23eed47bb0984d
+      internalID: 774651492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_22
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1468
+        width: 40
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ab91809e50051418273587b3ce299c
+      internalID: -2051899280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_23
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1532
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d575e06285b0d342bde5dbc711eb8e9
+      internalID: 820482455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_24
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1532
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac99350511372af428feed2d9f44029b
+      internalID: 1598661832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_25
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1532
+        width: 56
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e7037e3ebc07047bede9a019e51afe
+      internalID: -1643839422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_26
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1532
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081ec9ff5e91e3245871879f4b6a167c
+      internalID: -1748014496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75dcf5fb72047a94a922edb0eddc3f8b
+      internalID: -506592816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_28
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9eb5c3ca577d04dbcb94d087aa4b5e
+      internalID: 832834491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_29
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e89ec4a88cba1f4faeaa9e57f0ceafd
+      internalID: -829865083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_30
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b966076fdd4d3fa49a3393bac8e40747
+      internalID: -994416229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_31
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde4058ecd2fff942b6b6f2e6d66106b
+      internalID: -2132445945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_32
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a99778f5c3c37142aff480179d178d7
+      internalID: 339587210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_33
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7807b42892a384494dbb9e5d234218
+      internalID: 1728879300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_34
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 1276
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e1555baaabb304593c5c0ee8175544
+      internalID: 1176231268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_35
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1136
+        width: 1024
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca43a9edb38a1f42ac5858c18969b5e
+      internalID: -393552228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_36
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1000
+        width: 1024
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65262dd4a5f4744391e6a2b26b1dd8e
+      internalID: -1967258294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_37
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 860
+        width: 1024
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b4fa72819911d49ad5b3a073bdbdfd
+      internalID: 319127671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_38
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 724
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633b941129d4eaa40b272d037ac7461d
+      internalID: -1289929029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_39
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 724
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39b16d443c98f348b1fe591a59ed212
+      internalID: -993135248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_40
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 588
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62bdc4b88e7f6c43b7a120d2a290875
+      internalID: 2115556868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_41
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 588
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e3e7e9304f28b458bd30369332ffea
+      internalID: 1650941378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_42
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 452
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfb86635ba7b134ebe44382c789baf3
+      internalID: -476546078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_43
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 452
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3306c73c6dfe48a4ea106f228a5aa27b
+      internalID: -1557141585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_44
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 316
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3d122f6dec85343aa0479c77bc4e32
+      internalID: -1090690157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_45
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 316
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed30638e119c1d54d8d5c31204a6f649
+      internalID: -30537362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_46
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 180
+        width: 516
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac002dc11c7c8f40b95dc99cf4c6f5f
+      internalID: 127576659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_47
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 180
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6acc1f45cab63c4ea4d4bab33e47e0d
+      internalID: 1036181807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_48
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 44
+        width: 516
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9d55a655fc5614d99dcb2d7190dfb6
+      internalID: -1974055327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InteriorDesignKit_49
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 44
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1cd7bf7a70fd246ac99f637842d251
+      internalID: -821894457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      InteriorDesignKit_38: -1289929029
+      InteriorDesignKit_21: 774651492
+      InteriorDesignKit_27: -506592816
+      InteriorDesignKit_18: 2052980766
+      InteriorDesignKit_10: 425654530
+      InteriorDesignKit_31: -2132445945
+      InteriorDesignKit_29: -829865083
+      InteriorDesignKit_6: 1598342641
+      InteriorDesignKit_7: 44674538
+      InteriorDesignKit_15: -701946687
+      InteriorDesignKit_35: -393552228
+      InteriorDesignKit_0: -718274502
+      InteriorDesignKit_45: -30537362
+      InteriorDesignKit_40: 2115556868
+      InteriorDesignKit_41: 1650941378
+      InteriorDesignKit_32: 339587210
+      InteriorDesignKit_9: 209242836
+      InteriorDesignKit_24: 1598661832
+      InteriorDesignKit_23: 820482455
+      InteriorDesignKit_34: 1176231268
+      InteriorDesignKit_4: 354816444
+      InteriorDesignKit_3: 797060127
+      InteriorDesignKit_37: 319127671
+      InteriorDesignKit_20: -436917045
+      InteriorDesignKit_26: -1748014496
+      InteriorDesignKit_33: 1728879300
+      InteriorDesignKit_44: -1090690157
+      InteriorDesignKit_42: -476546078
+      InteriorDesignKit_30: -994416229
+      InteriorDesignKit_48: -1974055327
+      InteriorDesignKit_47: 1036181807
+      InteriorDesignKit_17: -157900776
+      InteriorDesignKit_28: 832834491
+      InteriorDesignKit_22: -2051899280
+      InteriorDesignKit_2: 7956149
+      InteriorDesignKit_1: 1574360488
+      InteriorDesignKit_36: -1967258294
+      InteriorDesignKit_46: 127576659
+      InteriorDesignKit_25: -1643839422
+      InteriorDesignKit_8: 967873791
+      InteriorDesignKit_13: -922526633
+      InteriorDesignKit_16: 858726938
+      InteriorDesignKit_11: 1476471552
+      InteriorDesignKit_39: -993135248
+      InteriorDesignKit_12: -1524553835
+      InteriorDesignKit_43: -1557141585
+      InteriorDesignKit_14: -129371796
+      InteriorDesignKit_19: -1779978409
+      InteriorDesignKit_5: 1662679076
+      InteriorDesignKit_49: -821894457
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
