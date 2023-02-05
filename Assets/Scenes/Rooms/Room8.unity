@@ -795,11 +795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276004891071477011, guid: 9414e356a6703ee4ea7b15305391562d, type: 3}
       propertyPath: <spawnPoint>k__BackingField.x
-      value: -6.43
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 6276004891071477011, guid: 9414e356a6703ee4ea7b15305391562d, type: 3}
       propertyPath: <spawnPoint>k__BackingField.y
-      value: -3.25
+      value: -2.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9414e356a6703ee4ea7b15305391562d, type: 3}
