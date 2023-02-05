@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int Find(int[] arr, int num)
+    public int FindNum(int[] arr, int num)
     {
         for(int i = 0; i < arr.Length; i++)
             if (arr[i] == num)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 { 
@@ -73,9 +74,52 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnMainCast()
     {
+        int i = 0;
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Building1":
+                i = 0;
+                break;
+            case "Building2":
+                i = 1;
+                break;
+            case "Building3":
+                i = 2;
+                break;
+            case "Building4":
+                i = 3;
+                break;
+            case "Building5":
+                i = 4;
+                break;
+            case "Building6":
+                i = 5;
+                break;
+            case "Building7":
+                i = 6;
+                break;
+            case "Building8":
+                i = 7;
+                break;
+            case "Building9":
+                i = 8;
+                break;
+            case "Building10":
+                i = 9;
+                break;
+            case "Building11":
+                i = 10;
+                break;
+            case "Building12":
+                i = 11;
+                break;
+            case "Building13":
+                i = 12;
+                break;
+        }
         //Create them
-        GameObject obj = Instantiate(mainCast[0]);
-        obj.transform.SetPositionAndRotation(GameManager.instance.GetInformantLocation(i).transform.position + charOffsets[12 + i], GameManager.instance.GetInformantLocation(i).transform.rotation);
+        GameObject obj = Instantiate(mainCast[i]);
+        obj.transform.SetPositionAndRotation(GameManager.instance.GetCharacterLocation(i) + charOffsets[i], GameManager.instance.GetCharacterLocation(i));
 
         //Give them their respective clues
         obj.GetComponent<CodeNPCData>().SetMessage(GameManager.instance.GetInformantClue(i), "");
