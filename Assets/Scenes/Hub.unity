@@ -5552,7 +5552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276004891071477011, guid: 9414e356a6703ee4ea7b15305391562d, type: 3}
       propertyPath: <sceneName>k__BackingField
-      value: Room4
+      value: Building5
       objectReference: {fileID: 0}
     - target: {fileID: 6276004891071477011, guid: 9414e356a6703ee4ea7b15305391562d, type: 3}
       propertyPath: <spawnPoint>k__BackingField.x
