@@ -2715,7 +2715,7 @@ MonoBehaviour:
   - {fileID: 4664546488787366646, guid: 4f240f3fd9564b647a4f2f0b058dfe56, type: 3}
   - {fileID: 9083097762964201704, guid: 303b3104770662940838664447dc5a7c, type: 3}
   mainCastSpawnList:
-  - {fileID: 0}
+  - {fileID: 7099222619668559375, guid: e9ec335804767af499a11485c2956909, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
