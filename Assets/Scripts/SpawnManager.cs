@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     private List<GameObject> informantSpawnList;
 
     private List<GameObject> currentInformants;
+    private GameObject currentMC;
 
     [SerializeField]
     private List<Vector3> charOffsets;
@@ -68,6 +69,19 @@ public class SpawnManager : MonoBehaviour
             //Add to the current informants list
             currentInformants.Add(obj);
         }
+    }
+
+    public void SpawnMainCast()
+    {
+        //Create them
+        GameObject obj = Instantiate(mainCast[0]);
+        obj.transform.SetPositionAndRotation(GameManager.instance.GetInformantLocation(i).transform.position + charOffsets[12 + i], GameManager.instance.GetInformantLocation(i).transform.rotation);
+
+        //Give them their respective clues
+        obj.GetComponent<CodeNPCData>().SetMessage(GameManager.instance.GetInformantClue(i), "");
+
+        //Add to the current informants list
+        currentInformants.Add(obj);
     }
 
     #endregion

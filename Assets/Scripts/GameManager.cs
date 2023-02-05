@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
                     }
 
                     //Make da message
-                    data.informantClues[i] = "The rats talk at night. They told me that a gig is happening soon in Building " + Find(data.characterLocations, GetHitList()[GetNextHitIndex()]);
+                    data.informantClues[i] = "The rats talk at night. They told me that a gig is happening soon in Building [X]";
                     break;
 
                 case "Location":
@@ -128,7 +128,6 @@ public class GameManager : MonoBehaviour
                         break;
                     }
                     //Find the building
-                    int Find(data.characterLocations, GetHitList()[GetNextHitIndex()]);
 
                     //Make da message
                     data.informantClues[i] = "A little weevil told me that something's going down in the [X] part of town";
